@@ -8,4 +8,12 @@ This project has two goals:
  2. An iText-based application to generate custom Cards against Humanity cards
     with the correct dimensions.
 
+---
+
+ * `black.csv` contains questions.
+ * `white.csv` contains answers.
+ * A single `_` is used for a default blank.
+ * Multiple underline characters are used for custom blank lengths.
+ * HTML can be used for formatting.
+
 [1]: https://cardsagainsthumanity.com/
