@@ -10,8 +10,8 @@ This project has two goals:
 
 ---
 
- * `black.csv` contains questions.
- * `white.csv` contains answers.
+ * `black.txt` contains questions, one per line.
+ * `white.txt` contains answers, one per line.
  * A single `_` is used for a default blank.
  * Multiple underline characters are used for custom blank lengths.
  * HTML can be used for formatting.
