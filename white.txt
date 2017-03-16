@@ -4,3 +4,9 @@ Baruchian Egnlis
 Continuing a torch-lit walk in the middle of the night to reach a far-flung pokestop.
 A faint taste of citrus.
 Dirt jokes
+500 threads, each outputting 500 documents
+ungodly performance gains
+Alexa ignoring you
+SVG support
+Demanding facetime with your CEO
+ill-matched parenthesis
