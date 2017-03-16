@@ -5,14 +5,25 @@ Continuing a torch-lit walk in the middle of the night to reach a far-flung poke
 A faint taste of citrus.
 Dirt jokes
 500 threads, each outputting 500 documents
-ungodly performance gains
+Ungodly performance gains
 Alexa ignoring you
 SVG support
 Demanding facetime with your CEO
-ill-matched parenthesis
+Ill-matched parenthesis
 The Undying Performance Ticket
 The Boomswitch
 Sales Team Intervention
 Friday conversation subjects
-iText14
+iText 14
 Alexa, Stop
+Lovecraftian horror of code
+Leaving your coffee at the coffee machine
+Squeaky shoes
+Merging develop into develop
+Merge conflicts
+Cherry-picking
+Breaking the build
+Pull requests
+Sharepoint
+Eldritch abominations
+Autoporting
