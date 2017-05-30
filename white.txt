@@ -32,3 +32,4 @@ a complete code-sample
 and NDA
 the license key generator
 a strong yellow energy aura
+a javascript version of iText
