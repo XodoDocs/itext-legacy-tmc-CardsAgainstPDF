@@ -29,7 +29,7 @@ Eldritch abominations
 Autoporting
 staring out the window mid-compile, and watching a twenty-something couple engage in a lovers' tiff
 a complete code-sample
-and NDA
+an NDA
 the license key generator
 a strong yellow energy aura
 a javascript version of iText

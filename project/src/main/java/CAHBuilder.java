@@ -44,11 +44,11 @@ public class CAHBuilder {
     public static void main(String[] args) throws IOException {
 
         // white cards
-        File input = new File("C:\\Users\\Joris Schellekens\\Desktop\\cah\\white.txt");
+        File input = new File("C:\\Users\\Joris Schellekens\\Documents\\code\\cardsagainstpdf\\white.txt");
         buildCards(input, Color.WHITE, Color.BLACK);
 
         // black cards
-        input = new File("C:\\Users\\Joris Schellekens\\Desktop\\cah\\black.txt");
+        input = new File("C:\\Users\\Joris Schellekens\\Documents\\code\\cardsagainstpdf\\black.txt");
         buildCards(input, Color.BLACK, Color.WHITE);
     }
 
