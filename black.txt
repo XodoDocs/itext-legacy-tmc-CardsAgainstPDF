@@ -32,3 +32,6 @@ According to my Insights profile, I should _.
 The new Pdf spec allows you to embed _ in every page.
 Where in ISO-32000-2 does it say that it is allowed to _?
 Can you reproduce the problem? When I try your code, I always get _!
+_? Give me five minutes, three eggs, and duct tape.
+_ ? I can take this.
+_ ? That sounds like something Bruno would say.
