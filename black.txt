@@ -1,5 +1,5 @@
 _ #BeLikeBruno
-_ is a good stackoverflow question.
+_ is a good Stack Overflow question.
 Alexa, _
 _ #DontBeLikeBruno
 In the iTextGames, _ can only lead to _ .
@@ -19,5 +19,5 @@ The green room is booked, Alaine is having a _.
 Tony requests a new feature, _.
 Trust Sales, it's _.
 _ is NSFW.
-The random channel on Slack has been _.
+The #random channel on Slack has been _.
 _ would be a great activity for the next team building event.
