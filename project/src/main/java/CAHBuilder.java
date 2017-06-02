@@ -57,8 +57,17 @@ public class CAHBuilder {
 
 
     private static String[] readTXT(File input) throws FileNotFoundException {
-        // read entire file
-        String[] txts = new Scanner(input).useDelimiter("\\z").next().split("\n");
+
+        // read file
+        String tmp = "";
+        Scanner sc = new Scanner(input);
+        while(sc.hasNextLine()) {
+            tmp += sc.nextLine() + "\n";
+        }
+        sc.close();
+
+        // split
+        String[] txts = tmp.split("\n");
         for(int i=0;i<txts.length;i++)
         {
             String txt = txts[i].replaceAll("[\n\r]+","");
