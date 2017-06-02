@@ -7,3 +7,12 @@ _ in _ out
 Swapnil logged a ticket, he wants _
 Our sales team now offers free _ with every purchase of iText7.
 While waiting on Deliveroo, it is always a good idea to _.
+_ ? That's gonna be at least 13 storypoints
+_ ? That's more like 2 storypoints.
+_ ? You should ask Bruno.
+_ ? You should ask Michael.
+_ ? You should ask Benoit.
+_ ? You should ask someone from sales.
+_ ? I think you should ask Tony.
+The staff room is booked, Raf is doing _.
+The green room is booked, Alaine is having a _.
