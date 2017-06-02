@@ -16,5 +16,5 @@ _ ? You should ask someone from sales.
 _ ? I think you should ask Tony.
 The staff room is booked, Raf is doing _.
 The green room is booked, Alaine is having a _.
-Tony Requests a new feature, _.
+Tony requests a new feature, _.
 Trust Sales, it's _.
