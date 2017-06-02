@@ -12,6 +12,7 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -40,48 +41,22 @@ public class CAHBuilder {
 
     // branding
     private static final String BRANDING_SLOGAN = "Cards Against Pdf";
+    private static final Color WHITE = Color.WHITE;
+    private static final Color BLACK = Color.BLACK;
 
     public static void main(String[] args) throws IOException {
 
-        // white cards
-        File input = new File("C:\\Users\\Joris Schellekens\\Documents\\code\\cardsagainstpdf\\white.txt");
-        buildCards(input, Color.WHITE, Color.BLACK);
-
-        // black cards
-        input = new File("C:\\Users\\Joris Schellekens\\Documents\\code\\cardsagainstpdf\\black.txt");
-        buildCards(input, Color.BLACK, Color.WHITE);
-    }
-
-    /**
-     * Build a pdf containing CAH cards
-     * @param input file of text lines, separated by newline
-     * @param background the background color
-     * @param foreground the foreground color
-     * @throws IOException
-     */
-    public static void buildCards(File input, Color background, Color foreground) throws IOException {
-
-        // extract name
-        String name = input.getName();
-        name = name.substring(0, name.lastIndexOf("."));
-
-        // output file
-        File output = new File(input.getParentFile(), name + ".pdf");
+        // IO
+        File whiteInput = new File("C:\\Users\\Joris Schellekens\\Documents\\code\\cardsagainstpdf\\white.txt");
+        File blackInput = new File("C:\\Users\\Joris Schellekens\\Documents\\code\\cardsagainstpdf\\black.txt");
+        File output = new File(whiteInput.getParentFile(),"CardsAgainstPdf.pdf");
 
         // build
-        buildCards(input, output, background, foreground);
+        buildCards(whiteInput, blackInput, output);
     }
 
-    /**
-     * build cards
-     * @param input file of text lines, separated by newline
-     * @param output a pdf file
-     * @param background the background color
-     * @param foreground the foreground color
-     * @throws IOException
-     */
-    public static void buildCards(File input, File output, Color background, Color foreground) throws IOException {
 
+    private static String[] readTXT(File input) throws FileNotFoundException {
         // read entire file
         String[] txts = new Scanner(input).useDelimiter("\\z").next().split("\n");
         for(int i=0;i<txts.length;i++)
@@ -92,21 +67,19 @@ public class CAHBuilder {
             txt = txt.substring(0,1).toUpperCase() + txt.substring(1);
             txts[i] = txt;
         }
+        return txts;
+    }
 
-        PdfWriter writer = new PdfWriter(output.getAbsolutePath());
-        PdfDocument pdfDocument = new PdfDocument(writer);
-        Document layoutDocument = new Document(pdfDocument);
-        pdfDocument.setDefaultPageSize(new PageSize(PAGE_WIDTH, PAGE_HEIGHT));
-        layoutDocument.setMargins(TOP_MARGIN,RIGHT_MARGIN,BOTTOM_MARGIN,LEFT_MARGIN);
+    private static void addTable(Document layoutDocument, String[] lines, Color foreground, Color background) throws IOException {
 
         PdfFont font = PdfFontFactory.createFont("C:\\Windows\\Fonts\\tahomabd.ttf");
         int cellsPerPage = NOF_COLS * NOF_ROWS;
-        for(int i=0;i<java.lang.Math.ceil(txts.length/(cellsPerPage + 0.0));i++)
+        for(int i=0;i<java.lang.Math.ceil(lines.length/(cellsPerPage + 0.0));i++)
         {
             Table table = new Table(4);
             for(int j=0;j<cellsPerPage;j++) {
 
-                if(i*cellsPerPage + j >= txts.length)
+                if(i*cellsPerPage + j >= lines.length)
                     continue;
 
                 // add cell representing one white card
@@ -117,11 +90,11 @@ public class CAHBuilder {
                 cardCell.setBorder(new SolidBorder(foreground, 1));
 
                 // title in Tahoma bold 14
-                Paragraph txtParagraph = new Paragraph(txts[i * cellsPerPage + j]);
+                Paragraph txtParagraph = new Paragraph(lines[i * cellsPerPage + j]);
                 txtParagraph.setFont(font);
                 txtParagraph.setFontColor(foreground);
 
-                int txtLen = txts[i*cellsPerPage+j].length();
+                int txtLen = lines[i*cellsPerPage+j].length();
                 float fontSize = txtLen < 100 ? ( txtLen < 50 ? 14 : 12) : 10;
                 txtParagraph.setFontSize(fontSize);
                 txtParagraph.setMargin(5f);
@@ -141,9 +114,34 @@ public class CAHBuilder {
                 table.addCell(cardCell);
             }
             layoutDocument.add(table);
-            if(i != java.lang.Math.ceil(txts.length/(cellsPerPage + 0.0)) - 1)
+            if(i != java.lang.Math.ceil(lines.length/(cellsPerPage + 0.0)) - 1)
                 layoutDocument.add(new AreaBreak());
         }
+    }
+
+    /**
+     * build cards
+     * @param blackInput file of text lines, separated by newline
+     * @param output a pdf file
+     * @throws IOException
+     */
+    public static void buildCards(File blackInput, File whiteInput, File output) throws IOException {
+
+        String[] blackTxt = readTXT(blackInput);
+        String[] whiteTxt = readTXT(whiteInput);
+
+        PdfWriter writer = new PdfWriter(output.getAbsolutePath());
+        PdfDocument pdfDocument = new PdfDocument(writer);
+        Document layoutDocument = new Document(pdfDocument);
+        pdfDocument.setDefaultPageSize(new PageSize(PAGE_WIDTH, PAGE_HEIGHT));
+        layoutDocument.setMargins(TOP_MARGIN,RIGHT_MARGIN,BOTTOM_MARGIN,LEFT_MARGIN);
+
+        // add black
+        addTable(layoutDocument, whiteTxt, WHITE, BLACK);
+
+        // add white
+        layoutDocument.add(new AreaBreak());
+        addTable(layoutDocument, blackTxt, BLACK, WHITE);
 
         layoutDocument.close();
     }
