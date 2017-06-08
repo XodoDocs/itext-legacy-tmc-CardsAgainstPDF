@@ -79,6 +79,31 @@ public class CAHBuilder {
         return txts;
     }
 
+    private static float fontSize(String text)
+    {
+        // if there are more than 100 characters, go to 12f
+        if(text.length() > 100)
+            return 10f;
+
+        // if there are more than 50 characters, go to 12f
+        if(text.length() > 50)
+            return 12f;
+
+        // default should now be 14f
+        int longestWordLen = 0;
+        for(String w : text.split(" "))
+            longestWordLen = java.lang.Math.max(longestWordLen, w.length());
+
+        if (longestWordLen >= 20)
+            return 10f;
+
+        if(longestWordLen >= 40)
+            return 5f;
+
+        // default
+        return 14f;
+    }
+
     private static void addTable(Document layoutDocument, String[] lines, Color foreground, Color background) throws IOException {
 
         PdfFont font = PdfFontFactory.createFont("C:\\Windows\\Fonts\\tahomabd.ttf");
@@ -103,8 +128,7 @@ public class CAHBuilder {
                 txtParagraph.setFont(font);
                 txtParagraph.setFontColor(foreground);
 
-                int txtLen = lines[i*cellsPerPage+j].length();
-                float fontSize = txtLen < 100 ? ( txtLen < 50 ? 14 : 12) : 10;
+                float fontSize = fontSize(lines[i*cellsPerPage+j]);
                 txtParagraph.setFontSize(fontSize);
                 txtParagraph.setMargin(5f);
                 cardCell.add(txtParagraph);
