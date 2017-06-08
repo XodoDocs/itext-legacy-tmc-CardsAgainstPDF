@@ -176,6 +176,10 @@ public class CAHBuilder {
         layoutDocument.add(new AreaBreak());
         addTable(layoutDocument, blackTxt, BLACK, WHITE);
 
+        // add disclaimer
+        layoutDocument.add(new AreaBreak());
+        layoutDocument.add(new Paragraph("DISCLAIMER : The information and views set out in this publication are those of the author(s) and do not necessarily reflect the official opinion of the iText software corporation. Neither iText nor any person acting on their behalf may be held responsible for the use which may be made of the information contained therein."));
+
         layoutDocument.close();
     }
 }
