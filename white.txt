@@ -142,3 +142,9 @@ Loving vegan hut
 sudo rm -rf
 kwakje
 VB for Android
+Unusual pull requests
+Pavel's approval
+A conference call with Pavel
+Alexey on StackOverflow
+Scoring a revival badge
+50K reputation
