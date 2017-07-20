@@ -179,3 +179,5 @@ An undeserved upvote
 Fanning the flames on StackOverflow
 An Amedee intervention on StackOverflow
 The voice of reason
+A bible verse
+IllegalArgumentException
