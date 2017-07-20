@@ -27,7 +27,7 @@ Pull requests
 Sharepoint
 Eldritch abominations
 Autoporting
-Staring out the window mid-compile, and watching a twenty-something couple engage in a lovers' tiff
+Staring out the window mid-compile
 A complete code-sample
 An NDA
 The license key generator
@@ -178,4 +178,4 @@ An upvote
 An undeserved upvote
 Fanning the flames on StackOverflow
 An Amedee intervention on StackOverflow
-The voice or reason
+The voice of reason
