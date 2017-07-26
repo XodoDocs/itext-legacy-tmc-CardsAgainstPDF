@@ -181,3 +181,9 @@ An Amedee intervention on StackOverflow
 The voice of reason
 A bible verse
 IllegalArgumentException
+Explaining git to sales
+Unholy git commands
+A clean git history
+Squashing the commits
+Rebasing the commits
+Circular dependency
