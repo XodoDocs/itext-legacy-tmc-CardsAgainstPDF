@@ -187,3 +187,5 @@ A clean git history
 Squashing the commits
 Rebasing the commits
 Circular dependency
+a mud-fight with Marleentje
+live-streamen op de wifi van de punt
