@@ -216,3 +216,6 @@ the original iText goodie bag
 a surprise email from Stephan
 a surprise email from HR
 ginger love
+the wells fargo document
+the compatibility matrix
+the competitor matrix
